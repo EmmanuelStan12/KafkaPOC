@@ -1,5 +1,7 @@
-FROM openjdk:17
+FROM openjdk:17-jdk-alpine
 
 WORKDIR /app
 
-COPY
+COPY target/KafkaPOC-0.0.1-SNAPSHOT.jar kafkaPOC.jar
+
+ENTRYPOINT ["java", "-jar", "/app/kafkaPOC.jar"]
